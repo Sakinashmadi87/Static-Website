@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Einführung in AWS Grundlagen</title>
+    <style>
+        /* Allgemeine Stile für die Seite */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Kopfzeile */
+        header {
+            background-color: #232f3e; /* AWS blau */
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Bild im Header */
+        header img {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        /* Suchformular im Header */
+        form {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        form input[type="search"] {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        form input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #ff9900; /* AWS orange */
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #e68a00; /* dunkleres Orange beim Hover */
+        }
+
+        /* Hauptinhalt */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #232f3e; /* AWS blau */
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        h4 {
+            text-align: center;
+            margin-top: 0;
+            font-weight: normal;
+            color: #666;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        /* Videoeinbettung */
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Fußzeile */
+        footer {
+            background-color: #232f3e; /* AWS blau */
+            color: #fff;
+            text-align: center;
+            padding: 3px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        #akkordeon:not(:target) .inhalt,
+        #akkordeon:not(:target) .hide,
+        #akkordeon:target .show {
+            display: none;
+        }
+        #akkordeon:target .inhalt {
+            display: block;
+        }
+        .inhalt {
+            
+            padding: 20px 20px 1px;
+            margin: 0px 0px 10px;
+        }
+        .show,
+        .hide {
+            padding: 10px;
+            box-shadow: none !important;
+            color:Black;
+            font-weight: bold;
+            text-decoration: ;
+            display: block;
+        }
+     
+    </style>
+</head>
+<body>
+    <header>
+        <img src="aws.png" alt="AWS Logo" width="150" height="100">
+        <nav>
+            <a href="AWS-Fondamental.html">Home</a>
+            <a href="Dienste.html">Dienste</a>
+            <a href="tutorials.html">Tutorials</a>
+            <a href="best-practices.html">Best Practices</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <form action="/action_page.php">
+            <label for="gsearch" style="color: #fff;">Search Google:</label>
+            <input type="search" id="gsearch" name="gsearch">
+            <input type="submit" value="Suchen">
+        </form>
+    </header>
+    <main class="container">
+        <h1>Amazon Web Services (AWS)</h1>
+        <h2>AWS-Dienste</h2>
+        <ul>
+            <li><strong>Amazon S3:</strong> Ein Objektspeicher-Service für die Speicherung und Sicherung von Daten.</li>
+            <li><strong> Amazon EC2:</strong> Virtuelle Server für Rechenleistung und Skalierung.</li>
+            <div id="akkordeon">
+                <a href="#akkordeon" class="show"> Amazon EC2</a>
+                <a href="#" class="hide">Amazon EC2</a>
+                <div class="inhalt">
+            <ul>
+                <li><strong>Amazon EC2 Instance Types:</strong></li>
+                <ul>
+                    <li><strong>On-Demand:</strong>
+                        <ul>
+                            <li>Ideal für kurzfristige, unregelmäßige Workloads, die nicht unterbrochen werden können.</li>
+                            <li>Keine Vorabkosten oder Mindestvertragslaufzeiten.</li>
+                            <li>Pay-as-you-go-Preismodell.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Reserved Instances:</strong>
+                        <ul>
+                            <li>Standard Reserved Instance.</li>
+                            <li>Convertible Reserved Instance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>EC2 Instance Saving Plans:</strong>
+                        <ul>
+                            <li>Commitment Duration and Flexibility.</li>
+                            <li>Instance Family and Sizes.</li>
+                            <li>Instance Flexibility.</li>
+                            <li>Regional and Zonal Options.</li>
+                            <li>Shared Usage.</li>
+                            <li>1-year or 3-year term.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Spot Instances:</strong>
+                        <ul>
+                            <li>Mögliche Unterbrechungen.</li>
+                            <li>Bis zu 90 % Rabatt.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+        </div>
+            <li><strong>Amazon RDS:</strong> Ein verwalteter Datenbank-Service für relationale Datenbanken.</li>
+            <li><strong>AWS Lambda:</strong> Ein Serverless Computing-Service für die Ausführung von Code ohne Serververwaltung.</li>
+        </ul>
+    </main>
+    <footer>
+        <p style="text-align:center;">&copy; 2024 Einführung in AWS. Alle Rechte vorbehalten.</p>
+        <p style="text-align:center;" class="test">Die E-Mail Adresse:<a style="color: aquamarine;" href="mailto:aws@info.mail">aws@info.mail</a></p>
+    </footer>
+</body>
+</html>
